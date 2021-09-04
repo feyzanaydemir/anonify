@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <h1>Become a Member</h1>
+    <form action=<%=`/membership/${user.username}`%> method="POST">
+      <label for="code">Code</label>
+      <input name="code" type="code" />
+      <button>Join</button>
+    </form>
+  </body>
+</html>

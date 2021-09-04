@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title></title>
+  </head>
+  <body>
+    <% if (user) {%>
+    <h2>Welcome back, <%= user.username %></h2>
+    <a href=<%=`/new/${user.username}`%>>New Message</a>
+    <% if(!user.membership) { %>
+      <a href="/membership">Become a Member</a>
+    <% } %>
+    <a href=<%=`/profile/${user.id}`%>>Profile</a>
+    <a href="/logout">Log Out</a>      
+    <% } else { %>
+    <h2>Hi, Please Login or Sign Up to Write a Message</h2>
+    <a href="/login">Login</a>
+    <a href="/signup">Sign Up</a>
+    <%}%>
+
+    <% if (messages.length > 0) {%> <%
+      messages.forEach(message => {%>
+        <div class="message-container">
+          <h2><%= message.title %></h2>
+          <p><%= message.content %></p>
+          <% if (user && message.user === user.username) {%>
+            <p><%= message.date %></p>
+            <p>You</p>
+          <% } else if (user && user.membership) {%>
+            <p><%= message.date %></p>
+            <p><%= message.user %></p>
+          <% } else { %>
+            <p>Anonymous</p>
+          <% } %>
+
+          <% if (user && user.moderator) { %>
+            <a href=<%=`/${message.key}`%>>X</a>
+          <% } %>
+        </div>
+      <% })%> 
+    <% } %>
+  </body>
+</html>
