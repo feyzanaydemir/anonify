@@ -1,15 +1,10 @@
 # Only Members
 
-## Description
+Only Members is an online messaging application where users can share anonymous posts. This app was made with Express.js, Node.js and MongoDB using MVC pattern. Passport.js was used as authentication middleware.
 
-Only Members is an online messaging app where users can view and create posts.
+![Preview](./public/assets/preview.png)
 
-- Visitors without an account cannot create posts. They can view existing posts but cannot see the timestamps and authors.
-
-- Regular users without a membership status can create and view posts but cannot see the timestamps and authors of other messages.
-
-- Users who have a valid membership code see the timestamps and authors of other messages.
-
-- Users who have a valid moderator code can see the timestamps and authors, and they have authentication to delete each message.
-
-- Every user has a profile where they can view their post history.
+- Visitors without an account cannot create posts. They can view the existing content but cannot see the timestamps and the authors.
+- Regular users without any membership status can create and view posts but cannot see the timestamps and the authors of other messages.
+- Users who have a valid membership code can see the timestamps and the authors of other messages.
+- Users who have a valid moderator code can see the timestamps and the authors. Mods have authorization to delete each message.
