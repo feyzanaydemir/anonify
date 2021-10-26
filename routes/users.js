@@ -68,9 +68,7 @@ router.post(
       .not()
       .isEmpty()
       .bail()
-      .isLength({ min: 8, max: 20 })
-      .bail()
-      .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, 'i'),
+      .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/, 'i'),
   ],
   user_controller.signUp
 );

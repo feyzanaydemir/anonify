@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Only Members | Membership</title>
+    <title>Only Members | New Post</title>
     <link href="/assets/styles/reset.css" rel="stylesheet" type="text/css" />
     <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
     <link
-      href="/assets/styles/membership.css"
+      href="/assets/styles/new-message.css"
       rel="stylesheet"
       type="text/css"
     />
@@ -16,6 +17,19 @@
         await fetch('/sessions', { method: 'DELETE' });
 
         window.location.href = window.location.origin;
+      };
+
+      const setDisabled = () => {
+        if (
+          document.querySelector('input').value.length > 1 &&
+          document.querySelector('textarea').value.length > 1
+        ) {
+          document.querySelector('form button').removeAttribute('disabled');
+        } else {
+          document
+            .querySelector('form button')
+            .setAttribute('disabled', 'true');
+        }
       };
     </script>
   </head>
@@ -31,13 +45,19 @@
         <% if (!user?.membership) { %>
         <a href="/users/membership">Become a Member</a>
         <% } %>
-        <a href="/" onclick="signOut()">Sign Out</a>
+        <button onclick="signOut()">Sign Out</button>
       </div>
     </header>
-    <h1>Become a Member</h1>
-    <form method="POST" action="/users/membership">
-      <label>Code <input name="code" type="password" /></label>
-      <button type="submit">Join</button>
+    <h1>New Message</h1>
+    <form method="POST" action="/messages">
+      <label
+        >Title <input type="text" name="title" oninput="setDisabled()"
+      /></label>
+      <label
+        >Content
+        <textarea name="content" rows="6" oninput="setDisabled()"></textarea>
+      </label>
+      <button type="submit" disabled>Post</button>
     </form>
     <footer>
       <a href="https://github.com/feyzanaydemir/only-members" target="_blank"

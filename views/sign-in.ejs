@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Only Members | Sign In</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/assets/styles/reset.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/styles/index.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/styles/sign-in.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <div class="title">
+        <a href="/">Only Members 🔏</a>
+        <h2>Private Chatting</h2>
+      </div>
+    </header>
+    <h1>Sign In</h1>
+    <form novalidate action="/sessions" method="POST">
+      <label>Email <input name="email" type="email" /></label>
+      <label>Password <input name="password" type="password" /></label>
+      <% if (validationErrors) {%>
+      <span>Incorrect email or password</span>
+      <% } %>
+      <button type="submit">Sign In</button>
+      <span>Don't have an account?</span>
+      <a href="/users/new">Sign Up</a>
+    </form>
+    <footer>
+      <a href="https://github.com/feyzanaydemir/only-members" target="_blank"
+        ><img src="/assets/github-mark.png" /> feyzanaydemir, 2021</a
+      >
+    </footer>
+  </body>
+</html>
