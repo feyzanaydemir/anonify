@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: calc(18px + 0.5vw);
+  font-weight: bolder;
+  margin: 10% 0 5% 0;
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+label {
+  font-size: calc(16px + 0.5vw);
+  font-weight: bolder;
+}
+
+input {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: calc(16px + 0.5vw);
+  color: black;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  max-width: 400px;
+}
+
+button {
+  width: fit-content;
+  border: solid 2px lightcyan;
+  padding: 0.25rem 0.5rem;
+  align-self: center;
+  font-size: calc(16px + 0.5vw);
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: lightcyan;
+  color: rgb(0, 32, 51);
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    margin: 2.5rem 0;
+    font-size: 23px;
+  }
+
+  button,
+  input,
+  label {
+    font-size: 21px;
+  }
+
+  li {
+    font-size: 19px;
+  }
+}
