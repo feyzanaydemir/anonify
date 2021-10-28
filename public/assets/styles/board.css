@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+  color: white;
+  text-decoration: none;
+}
+
+.message-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 0.5rem 1rem;
+  flex: 1;
+  margin-top: 1.5rem;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  background-color: lightcyan;
+  border-radius: 5px;
+  padding: 0.5rem;
+  gap: 1rem;
+  cursor: default;
+}
+
+.message h2 {
+  color: rgb(0, 32, 51);
+  font-size: calc(18px + 0.5vw);
+  font-weight: bolder;
+}
+
+.message p {
+  color: rgb(0, 32, 51);
+  font-size: calc(16px + 0.5vw);
+}
+
+.message div {
+  position: relative;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.date {
+  color: rgb(0, 32, 51);
+  font-size: calc(14px + 0.5vw);
+  position: absolute;
+  left: 0;
+}
+
+.author {
+  color: rgb(0, 32, 51);
+  font-size: calc(16px + 0.5vw);
+  font-weight: bold;
+  text-align: right;
+}
+
+.message div button {
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 32, 51);
+  font-size: calc(14px + 0.5vw);
+  font-weight: bold;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+@media (min-width: 600px) {
+  .message-container {
+    min-width: 600px;
+    max-width: 850px;
+    width: 80%;
+  }
+
+  .message {
+    gap: 1rem;
+  }
+
+  .message p {
+    line-height: 1.2em;
+  }
+}
+
+@media (min-width: 1000px) {
+  .message h2 {
+    font-size: 24px;
+  }
+
+  .message p,
+  .author {
+    font-size: 22px;
+  }
+
+  .date,
+  .message button {
+    font-size: 20px;
+  }
+}
