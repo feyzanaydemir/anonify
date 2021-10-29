@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: calc(18px + 0.5vw);
+  font-weight: bolder;
+  margin: 5% 0;
+  text-decoration: underline;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  flex: 1;
+  padding: 0.5rem;
+  width: fit-content;
+}
+
+label {
+  font-size: calc(16px + 0.5vw);
+  font-weight: bolder;
+}
+
+input {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: calc(16px + 0.5vw);
+  color: black;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  max-width: 400px;
+}
+
+ul {
+  padding-top: 0.5rem;
+}
+
+li {
+  text-align: center;
+  padding: 0.25rem 0;
+  width: fit-content;
+  font-size: calc(14px + 0.5vw);
+}
+
+.invalid {
+  background-color: rgb(255, 210, 216);
+}
+
+.valid {
+  background-color: white;
+}
+
+label div {
+  display: block;
+  position: relative;
+}
+
+input[name='password'] {
+  display: inline-block;
+  width: 90%;
+}
+
+.visibility {
+  position: absolute;
+  margin: 0.75rem 0 0 0.5rem;
+  cursor: pointer;
+}
+
+button,
+form a {
+  width: fit-content;
+  border: solid 2px lightcyan;
+  padding: 0.25rem 0.5rem;
+  align-self: center;
+  background-color: transparent;
+  font-size: calc(16px + 0.5vw);
+  font-weight: bolder;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+span {
+  text-align: center;
+  font-size: calc(16px + 0.5vw);
+  margin-top: 5%;
+}
+
+form a {
+  background-color: lightcyan;
+  color: rgb(0, 32, 51);
+}
+
+@media (min-width: 1000px) {
+  h1 {
+    margin: 2.5rem 0;
+    font-size: 23px;
+  }
+
+  button,
+  form a,
+  span,
+  input,
+  label {
+    font-size: 21px;
+  }
+
+  li {
+    font-size: 19px;
+  }
+}
