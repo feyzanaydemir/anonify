@@ -1,11 +1,9 @@
 const { validationResult } = require('express-validator');
 const passport = require('passport');
 
-// Sign in
 exports.signIn = async (req, res, next) => {
   const result = validationResult(req);
 
-  // Send an error signal if validation was failed
   if (result.errors.length > 0) {
     return res.render('sign-in', {
       validationErrors: true,
@@ -28,9 +26,7 @@ exports.signIn = async (req, res, next) => {
           return next(err);
         }
 
-        // Set user
         req.user = user;
-
         res.redirect('/');
       });
     })(req, res, next);
@@ -39,12 +35,10 @@ exports.signIn = async (req, res, next) => {
   }
 };
 
-// Sign Out
 exports.signOut = (req, res) => {
   try {
     req.logout();
-
-    res.sendStatus(200);
+    res.status(200).json('Sign out successfull.');
   } catch (err) {
     res.status(500).json(err);
   }

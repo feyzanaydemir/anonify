@@ -19,19 +19,19 @@
   background-color: lightcyan;
   border-radius: 5px;
   padding: 0.5rem;
-  gap: 1rem;
+  gap: 0.5rem;
   cursor: default;
 }
 
 .message h2 {
   color: rgb(0, 32, 51);
-  font-size: calc(18px + 0.5vw);
+  font-size: calc(16px + 0.5vw);
   font-weight: bolder;
 }
 
 .message p {
   color: rgb(0, 32, 51);
-  font-size: calc(16px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
 }
 
 .message div {
@@ -45,14 +45,14 @@
 
 .date {
   color: rgb(0, 32, 51);
-  font-size: calc(14px + 0.5vw);
+  font-size: calc(12px + 0.5vw);
   position: absolute;
   left: 0;
 }
 
 .author {
   color: rgb(0, 32, 51);
-  font-size: calc(16px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
   font-weight: bold;
   text-align: right;
 }
@@ -61,7 +61,7 @@
   background-color: transparent;
   border: none;
   color: rgb(0, 32, 51);
-  font-size: calc(14px + 0.5vw);
+  font-size: calc(12px + 0.5vw);
   font-weight: bold;
   margin-left: 0.5rem;
   cursor: pointer;
@@ -83,18 +83,18 @@
   }
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 400px) {
   .message h2 {
-    font-size: 24px;
+    font-size: 18px;
   }
 
   .message p,
   .author {
-    font-size: 22px;
+    font-size: 16px;
   }
 
   .date,
   .message button {
-    font-size: 20px;
+    font-size: 14px;
   }
 }

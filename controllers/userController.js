@@ -2,7 +2,6 @@ const { validationResult } = require('express-validator');
 const User = require('../models/User');
 const bcrypt = require('bcryptjs');
 
-// Sign Up
 exports.signUp = async (req, res, next) => {
   const result = validationResult(req);
 
@@ -30,10 +29,8 @@ exports.signUp = async (req, res, next) => {
     });
   }
 
-  // Hash the password input
   const hashedPassword = await bcrypt.hash(req.body.password, 10);
 
-  // Create a new user and save it to the database
   new User({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
@@ -45,11 +42,10 @@ exports.signUp = async (req, res, next) => {
       return next(err);
     }
 
-    res.redirect('/signin');
+    res.redirect('/sessions/new');
   });
 };
 
-// Change user membership status
 exports.updateMembership = async (req, res) => {
   if (req.body.code === process.env.MEMBERSHIP) {
     await User.findOneAndUpdate(

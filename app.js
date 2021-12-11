@@ -7,7 +7,6 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const passport = require('passport');
-const createError = require('http-errors');
 const LocalStrategy = require('passport-local').Strategy;
 const User = require('./models/User');
 const Message = require('./models/Message');
@@ -21,9 +20,9 @@ mongoose.connect(process.env.DB_URI, {
   useNewUrlParser: true,
 });
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'mongo connection error'));
+db.on('error', console.error.bind(console, 'Mongo connection error.'));
 
-// Passport.js
+// PassportJS
 passport.use(
   new LocalStrategy(
     {
@@ -62,13 +61,9 @@ passport.deserializeUser(function (id, done) {
 
 const app = express();
 
-// View engine
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-
-// Middlewares
 app.use(logger('dev'));
-app.use(express.static(path.join(__dirname, 'scripts')));
 app.use(
   session({
     secret: process.env.SECRET,
@@ -86,27 +81,25 @@ app.use('/users', usersRoute);
 app.use('/messages', messagesRoute);
 app.use('/sessions', sessionsRoute);
 
-// Homepage
 app.get('/', async (req, res) => {
+  let user;
   let messages = await Message.find({});
+  messages.reverse();
 
-  messages = messages.reverse();
+  if (messages.length > 200) {
+    messages = messages.slice(0, 200);
+  }
 
-  res.render('index', { user: req.user, messages });
+  if (req.user) {
+    user = req.user;
+
+    delete user['email'];
+    delete user['password'];
+  }
+
+  res.render('index', { user, messages });
 });
 
-// Error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+app.get('*', (req, res) => res.render('err'));
 
-app.use(function (err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  console.log(err.message);
-  res.status(err.status || 500);
-  res.render('err');
-});
-
-app.listen(3000, () => console.log('App listening on port 3000!'));
+app.listen(process.env.PORT || 8080, () => console.log('Listening!'));

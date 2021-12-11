@@ -1,7 +1,6 @@
 const Message = require('../models/Message');
 const { format } = require('date-fns');
 
-// Create a new message and save it to the database
 exports.createMessage = (req, res, next) => {
   new Message({
     title: req.body.title,
@@ -14,16 +13,14 @@ exports.createMessage = (req, res, next) => {
     }
   });
 
-  // Return to homepage
   res.redirect('/');
 };
 
-// Delete a message posted by the current user
 exports.deleteMessage = async (req, res) => {
   try {
     await Message.findByIdAndDelete(req.params.id);
 
-    res.sendStatus(200);
+    res.status(200).json('Message deleted successfully.');
   } catch (err) {
     res.status(500).json(err);
   }

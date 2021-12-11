@@ -1,10 +1,27 @@
-# Only Members
+# Anonify
 
-Only Members is an online messaging application where users can share anonymous posts. This app was made with Express.js, Node.js and MongoDB using MVC pattern. Passport.js was used as authentication middleware.
+NodeJS messaging application where users can share anonymous posts.
 
-![Preview](./public/assets/preview.png)
+- ### [See Live](https://anonify.herokuapp.com/)
 
-- Visitors without an account cannot create posts. They can view the existing content but cannot see the timestamps and the authors.
-- Regular users without any membership status can create and view posts but cannot see the timestamps and the authors of other messages.
-- Users who have a valid membership code can see the timestamps and the authors of other messages.
-- Users who have a valid moderator code can see the timestamps and the authors. Mods have authorization to delete each message.
+![Preview](./preview.png)
+
+## Features
+
+- MVC pattern ExpressJS and NodeJS backend with REST API
+- MongoDB integration with Mongoose
+- EJS engine for Views
+- Form sanitization and validation with Express Validator
+- User authentication with PassportJS
+- Visitors without an account
+  - Can view the existing content
+  - Cannot see the timestamps and the authors
+  - Cannot create posts
+- Regular users without any membership status
+  - Can create and view posts
+  - Cannot see the timestamps and the authors
+- Users who have a valid membership code
+  - Can see the timestamps and the authors
+- Users who have a valid moderator code
+  - Can see the timestamps and the authors
+  - Can delete messages

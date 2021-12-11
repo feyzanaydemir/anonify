@@ -3,9 +3,9 @@
 }
 
 h1 {
-  font-size: calc(18px + 0.5vw);
+  font-size: calc(16px + 0.5vw);
   font-weight: bolder;
-  margin: 5% 0;
+  margin: 1.5rem 0 0.5rem 0;
   text-decoration: underline;
 }
 
@@ -19,14 +19,14 @@ form {
 }
 
 label {
-  font-size: calc(16px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
   font-weight: bolder;
 }
 
 input {
   display: block;
   margin-top: 0.5rem;
-  font-size: calc(16px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
   color: black;
   width: 100%;
   border-radius: 5px;
@@ -43,7 +43,7 @@ li {
   text-align: center;
   padding: 0.25rem 0;
   width: fit-content;
-  font-size: calc(14px + 0.5vw);
+  font-size: calc(12px + 0.5vw);
 }
 
 .invalid {
@@ -77,7 +77,7 @@ form a {
   padding: 0.25rem 0.5rem;
   align-self: center;
   background-color: transparent;
-  font-size: calc(16px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
   font-weight: bolder;
   border-radius: 5px;
   cursor: pointer;
@@ -85,7 +85,7 @@ form a {
 
 span {
   text-align: center;
-  font-size: calc(16px + 0.5vw);
+  font-size: calc(14px + 0.5vw);
   margin-top: 5%;
 }
 
@@ -94,10 +94,9 @@ form a {
   color: rgb(0, 32, 51);
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 400px) {
   h1 {
-    margin: 2.5rem 0;
-    font-size: 23px;
+    font-size: 18px;
   }
 
   button,
@@ -105,10 +104,10 @@ form a {
   span,
   input,
   label {
-    font-size: 21px;
+    font-size: 16px;
   }
 
   li {
-    font-size: 19px;
+    font-size: 14px;
   }
 }
