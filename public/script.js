@@ -6,8 +6,8 @@ const signInAsGuest = async () => {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      email: GUEST_EMAIL,
-      password: GUEST_PASSWORD,
+      email: 'guest@guest.com',
+      password: 'guest1GUEST',
     }),
   });
 

@@ -37,26 +37,33 @@ input {
 
 button,
 form a {
-  width: fit-content;
-  border: solid 2px lightcyan;
-  padding: 0.25rem 0.5rem;
   align-self: center;
-  background-color: transparent;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  border: solid 2px lightcyan;
+  border-radius: 5px;
+  background-color: lightcyan;
+  color: rgb(0, 32, 51);
   font-size: calc(14px + 0.5vw);
   font-weight: bolder;
-  border-radius: 5px;
+  text-align: center;
   cursor: pointer;
 }
 
+button:hover,
+form a:hover {
+  text-decoration: underline;
+}
+
 span {
+  margin-top: 0.75rem;
   text-align: center;
   font-size: calc(14px + 0.5vw);
-  margin-top: 1rem;
 }
 
 form a {
-  background-color: lightcyan;
-  color: rgb(0, 32, 51);
+  color: white;
+  background-color: transparent;
 }
 
 @media (min-width: 400px) {

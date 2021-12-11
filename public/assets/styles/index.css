@@ -20,12 +20,13 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
   column-gap: 5%;
   row-gap: 1rem;
   flex-wrap: wrap;
-  white-space: nowrap;
+  width: 100%;
   padding: 1rem 1rem 0.5rem 1rem;
+  white-space: nowrap;
+  cursor: default;
 }
 
 .title {
@@ -37,8 +38,8 @@ header {
 }
 
 .title a {
-  border: none;
   padding: none;
+  border: none;
   font-size: calc(25px + 0.5vw);
 }
 
@@ -59,14 +60,21 @@ header h3 {
 
 header div a,
 header div button {
+  padding: 0.25rem 0.5rem;
+  border: solid 2px lightcyan;
+  border-radius: 5px;
   background-color: transparent;
-  font-weight: bolder;
   color: lightcyan;
   font-size: calc(12px + 0.5vw);
-  border: solid 2px lightcyan;
-  padding: 0.25rem 0.5rem;
-  border-radius: 5px;
+  font-weight: bolder;
   cursor: pointer;
+}
+
+header div a:hover,
+header div button:hover {
+  background-color: lightcyan;
+  color: rgb(0, 32, 51);
+  text-decoration: none;
 }
 
 footer {
@@ -75,8 +83,8 @@ footer {
   position: sticky;
   bottom: 0;
   height: 6vh;
-  min-height: fit-content;
-  max-height: 46px;
+  min-height: 30px;
+  max-height: 40px;
   width: 100%;
   padding: 0.5vh 0;
   border-top: solid 2px white;

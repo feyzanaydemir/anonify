@@ -8,18 +8,18 @@
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  padding: 0.5rem 1rem;
   flex: 1;
+  padding: 0.5rem 1rem;
   margin-top: 1.5rem;
 }
 
 .message {
   display: flex;
   flex-direction: column;
-  background-color: lightcyan;
-  border-radius: 5px;
-  padding: 0.5rem;
   gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: lightcyan;
   cursor: default;
 }
 
@@ -37,17 +37,17 @@
 .message div {
   position: relative;
   display: flex;
-  width: 100%;
   justify-content: flex-end;
   align-items: center;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .date {
-  color: rgb(0, 32, 51);
-  font-size: calc(12px + 0.5vw);
   position: absolute;
   left: 0;
+  color: rgb(0, 32, 51);
+  font-size: calc(12px + 0.5vw);
 }
 
 .author {
@@ -58,20 +58,20 @@
 }
 
 .message div button {
-  background-color: transparent;
   border: none;
+  margin-left: 0.5rem;
+  background-color: transparent;
   color: rgb(0, 32, 51);
   font-size: calc(12px + 0.5vw);
   font-weight: bold;
-  margin-left: 0.5rem;
   cursor: pointer;
 }
 
 @media (min-width: 600px) {
   .message-container {
+    width: 80%;
     min-width: 600px;
     max-width: 850px;
-    width: 80%;
   }
 
   .message {

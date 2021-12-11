@@ -3,9 +3,9 @@
 }
 
 h1 {
+  margin: 1.5rem 0 0.5rem 0;
   font-size: calc(16px + 0.5vw);
   font-weight: bolder;
-  margin: 1.5rem 0 0.5rem 0;
   text-decoration: underline;
 }
 
@@ -16,6 +16,7 @@ form {
   flex: 1;
   padding: 0.5rem;
   width: fit-content;
+  cursor: default;
 }
 
 label {
@@ -25,14 +26,14 @@ label {
 
 input {
   display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 5px;
   margin-top: 0.5rem;
   font-size: calc(14px + 0.5vw);
   color: black;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  max-width: 400px;
 }
 
 ul {
@@ -40,9 +41,9 @@ ul {
 }
 
 li {
-  text-align: center;
   padding: 0.25rem 0;
   width: fit-content;
+  text-align: center;
   font-size: calc(12px + 0.5vw);
 }
 
@@ -72,26 +73,32 @@ input[name='password'] {
 
 button,
 form a {
-  width: fit-content;
-  border: solid 2px lightcyan;
+  width: 100%;
   padding: 0.25rem 0.5rem;
-  align-self: center;
-  background-color: transparent;
+  border: solid 2px lightcyan;
+  border-radius: 5px;
   font-size: calc(14px + 0.5vw);
   font-weight: bolder;
-  border-radius: 5px;
+  background-color: lightcyan;
+  color: rgb(0, 32, 51);
+  text-align: center;
   cursor: pointer;
 }
 
 span {
+  margin-top: 5%;
   text-align: center;
   font-size: calc(14px + 0.5vw);
-  margin-top: 5%;
 }
 
 form a {
-  background-color: lightcyan;
-  color: rgb(0, 32, 51);
+  background-color: transparent;
+  color: white;
+}
+
+button:hover,
+form a:hover {
+  text-decoration: underline;
 }
 
 @media (min-width: 400px) {

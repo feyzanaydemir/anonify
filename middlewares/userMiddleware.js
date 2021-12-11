@@ -8,7 +8,7 @@ const checkSignUp = [
     .bail()
     .trim()
     .escape()
-    .isLength({ min: 2, max: 10 })
+    .isLength({ min: 2, max: 20 })
     .bail(),
   check('lastname')
     .not()
@@ -16,7 +16,7 @@ const checkSignUp = [
     .bail()
     .trim()
     .escape()
-    .isLength({ min: 2, max: 10 })
+    .isLength({ min: 2, max: 20 })
     .bail(),
   check('username')
     .not()
@@ -24,7 +24,7 @@ const checkSignUp = [
     .bail()
     .trim()
     .escape()
-    .isLength({ min: 3, max: 12 })
+    .isLength({ min: 3, max: 20 })
     .bail()
     .matches(/^[A-Za-z0-9 .,'!&]+$/)
     .custom(async (value, { req }) => {
@@ -54,7 +54,7 @@ const checkSignUp = [
     .not()
     .isEmpty()
     .bail()
-    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,16}$/, 'i'),
+    .matches(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, 'i'),
 ];
 
 module.exports = { checkSignUp };

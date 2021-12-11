@@ -25,27 +25,27 @@ label {
 
 input {
   display: block;
+  width: 100%;
+  max-width: 400px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+  border: none;
   margin-top: 0.5rem;
   font-size: calc(14px + 0.5vw);
   color: black;
-  width: 100%;
-  border-radius: 5px;
-  border: none;
-  padding: 0.25rem 0.5rem;
-  max-width: 400px;
 }
 
 button {
   width: fit-content;
-  border: solid 2px lightcyan;
   padding: 0.25rem 0.5rem;
-  align-self: center;
-  font-size: calc(14px + 0.5vw);
-  font-weight: bolder;
+  border: solid 2px lightcyan;
   border-radius: 5px;
-  cursor: pointer;
+  align-self: center;
   background-color: lightcyan;
   color: rgb(0, 32, 51);
+  font-size: calc(14px + 0.5vw);
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 @media (min-width: 400px) {
